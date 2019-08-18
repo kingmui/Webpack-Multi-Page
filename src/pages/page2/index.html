@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>Webpack-Multi-Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover;" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="apple-mobile-web-app-title" content="" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta content="telephone=no, email=no" name="format-detection" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="canonical" href="https://www.kingmui.cn" />
+    <script>
+      (function(doc, win) {
+        var UA = win.navigator.userAgent;
+        var isMobile = !!UA.match(/AppleWebKit.*Mobile.*/);
+        if (!isMobile) {
+          win.location.href = '/page1.html';
+        }
+        var docEl = doc.documentElement;
+        var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        var recalc = function() {
+          var clientWidth = docEl.clientWidth;
+          var MAX_WIDTH = 750;
+          if (!clientWidth) return;
+          docEl.style.fontSize = clientWidth >= MAX_WIDTH ? '100px' : 100 * (clientWidth / MAX_WIDTH) + 'px';
+        };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      Webpack Multi-page development configuration
+    </div>
+  </body>
+</html>
