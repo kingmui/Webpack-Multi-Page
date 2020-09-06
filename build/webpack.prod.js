@@ -1,4 +1,4 @@
-const { smart } = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
@@ -10,7 +10,7 @@ const { HOST_CONF } = require('./env-config');
 const smp = new SpeedMeasurePlugin();
 
 module.exports = smp.wrap(
-  smart(base, {
+  merge(base, {
     mode: 'production',
     devtool: 'source-map',
     output: {

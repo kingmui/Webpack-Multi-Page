@@ -1,11 +1,11 @@
 const webpack = require("webpack");
-const { smart } = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const base = require("./webpack.base.js");
 const utils = require("./utils");
 const { getIPAddress } = utils;
 const IPAddress = getIPAddress();
 
-module.exports = smart(base, {
+module.exports = merge(base, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
