@@ -5,6 +5,9 @@
   "description": "Webpack Multi-page development configuration",
   "homepage": "https://www.kingmui.cn/",
   "main": "index.js",
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "eslint .",
