@@ -1,7 +1,8 @@
+/* eslint-disable global-require */
 module.exports = {
-	plugins: [
+  plugins: [
     require('autoprefixer'),
-    require("postcss-plugin-px2rem")({
+    require('postcss-plugin-px2rem')({
       rootValue: 100,
       unitPrecision: 5,
       propWhiteList: [],
@@ -14,4 +15,4 @@ module.exports = {
       minPixelValue: 2,
     }),
   ]
-}
+};

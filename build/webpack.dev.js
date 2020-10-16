@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const base = require('./webpack.base.js');
 const utils = require('./utils');
+
 const { getIPAddress } = utils;
 const IPAddress = getIPAddress();
 

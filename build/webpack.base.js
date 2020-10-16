@@ -1,9 +1,12 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-console */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const colors = require('colors');
 const emoji = require('node-emoji');
 const rules = require('./webpack.rules');
 const utils = require('./utils');
+
 const { devMode, pathResolve, getEntry, getHTMLConfig } = utils;
 const entries = getEntry('./src/pages/**/*.js');
 const pages = getEntry('./src/pages/**/*.html');

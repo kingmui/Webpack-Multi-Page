@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const glob = require('glob');
 const os = require('os');
@@ -40,15 +38,15 @@ exports.getHTMLConfig = (basename, pages, chunks) => {
 
 exports.getIPAddress = () => {
   const interfaces = os.networkInterfaces();
-  for (const devName in interfaces) {
+  Object.getOwnPropertyNames(interfaces).forEach(devName => {
     const iface = interfaces[devName];
-    for (let i = 0; i < iface.length; i++) {
+    for (let i = 0; i < iface.length; i += 1) {
       const alias = iface[i];
       if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
         return alias.address;
       }
     }
-  }
+  });
 };
 
 exports.pathResolve = pathResolve;

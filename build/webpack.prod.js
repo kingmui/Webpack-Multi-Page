@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const base = require('./webpack.base.js');
 const { HOST_CONF } = require('./env-config');
 
@@ -45,8 +45,6 @@ module.exports = smp.wrap(
         maxInitialRequests: 3,
         // 分割前必须共享模块的最小块数
         minChunks: 1,
-        // 页面初始化时加载代码块的请求数量应该 <= 5
-        maxInitialRequests: 5,
         // 要生成的块的最小大小
         minSize: 0,
         // 打包出来的文件名。如果提供 true 将自动生成基于块和缓存组密钥的名称

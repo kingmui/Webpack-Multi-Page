@@ -26,7 +26,7 @@ const rules = [
     exclude: /node_modules/,
   },
   {
-    test: /\.html$/,
+    test: /\.html$/i,
     loader: 'html-loader',
   },
   {
