@@ -1,29 +1,26 @@
-const webpack = require("webpack");
-const { merge } = require("webpack-merge");
-const base = require("./webpack.base.js");
-const utils = require("./utils");
+const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+const base = require('./webpack.base.js');
+const utils = require('./utils');
 const { getIPAddress } = utils;
 const IPAddress = getIPAddress();
 
 module.exports = merge(base, {
-  mode: "development",
-  devtool: "inline-source-map",
+  mode: 'development',
+  devtool: 'inline-source-map',
   devServer: {
     host: IPAddress,
-    port: "8080",
-    publicPath: "/",
+    port: '8080',
+    publicPath: '/',
     compress: true,
     historyApiFallback: true,
     inline: true,
     open: true,
     overlay: {
       warnings: true,
-      errors: true
+      errors: true,
     },
-    hot: true
+    hot: true,
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-  ]
+  plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.NamedModulesPlugin()],
 });

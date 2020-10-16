@@ -27,14 +27,7 @@ const rules = [
   },
   {
     test: /\.html$/,
-    use: {
-      loader: 'html-loader',
-      options: {
-        attrs: ['img:src', 'img:data-src', 'video:src', 'audio:src'],
-        minimize: true,
-        removeAttributeQuotes: false,
-      },
-    },
+    loader: 'html-loader',
   },
   {
     test: /\.(sa|sc|c)ss$/,

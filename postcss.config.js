@@ -6,7 +6,7 @@ module.exports = {
       unitPrecision: 5,
       propWhiteList: [],
       propBlackList: [],
-      exclude: /(node_module|pages\/page1)/,
+      exclude: /(node_module|pages\/index)/,
       selectorBlackList: ['html', 'body'],
       ignoreIdentifier: false,
       replace: true,

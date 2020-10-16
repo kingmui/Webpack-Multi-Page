@@ -1,4 +1,4 @@
 import 'normalize.css';
 import './index.scss';
 
-console.log('page1');
+console.log('index');

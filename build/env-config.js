@@ -1,6 +1,5 @@
-"use strict";
-
 const utils = require('./utils');
+
 const { pathResolve } = utils;
 
 /*
@@ -12,29 +11,31 @@ const { pathResolve } = utils;
  * */
 const ENV_LIST = [
   {
-    envName: "dev",
-    dirName: "dev",
-    baseUrl: "",
-    assetsPublicPath: "../"
+    envName: 'dev',
+    dirName: 'dev',
+    baseUrl: '',
+    assetsPublicPath: '../',
   },
   {
-    envName: "test",
-    dirName: pathResolve("../dist"),
-    baseUrl: "",
-    assetsPublicPath: "../"
+    envName: 'test',
+    dirName: pathResolve('../dist'),
+    baseUrl: '',
+    assetsPublicPath: '../',
   },
   {
-    envName: "build",
-    dirName: pathResolve("../dist"),
-    baseUrl: "",
-    assetsPublicPath: "../"
-  }
+    envName: 'build',
+    dirName: pathResolve('../dist'),
+    baseUrl: '',
+    assetsPublicPath: '../',
+  },
 ];
 
-const HOST_ENV = JSON.parse(process.env.npm_config_argv).original[0] || "";
-const HOST_CONF = HOST_ENV
-  ? ENV_LIST.find(item => item.envName === HOST_ENV)
-  : ENV_LIST[0];
+let HOST_ENV = JSON.parse(process.env.npm_config_argv).original[0] || '';
+if (HOST_ENV === 'run') {
+  HOST_ENV = 'dev';
+}
+
+const HOST_CONF = HOST_ENV ? ENV_LIST.find((item) => item.envName === HOST_ENV) : ENV_LIST[0];
 process.env.BASE_URL = HOST_CONF.baseUrl;
 
 module.exports.HOST_CONF = HOST_CONF;

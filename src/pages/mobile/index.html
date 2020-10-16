@@ -14,11 +14,11 @@
     <link rel="canonical" href="https://www.kingmui.cn" />
     <script>
       (function(doc, win) {
-        var UA = win.navigator.userAgent;
-        var isMobile = !!UA.match(/AppleWebKit.*Mobile.*/);
-        if (!isMobile) {
-          win.location.href = '/page1.html';
-        }
+        // var UA = win.navigator.userAgent;
+        // var isMobile = !!UA.match(/AppleWebKit.*Mobile.*/);
+        // if (!isMobile) {
+        //   win.location.href = '/';
+        // }
         var docEl = doc.documentElement;
         var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
         var recalc = function() {
@@ -36,7 +36,7 @@
   </head>
   <body>
     <div id="app">
-      Webpack Multi-page development configuration
+      Mobile
     </div>
   </body>
 </html>
