@@ -8,7 +8,7 @@ const rules = require('./webpack.rules');
 const utils = require('./utils');
 
 const { devMode, pathResolve, getEntry, getHTMLConfig } = utils;
-const entries = getEntry('./src/pages/**/*.js');
+const entries = getEntry('./src/pages/**/*.ts');
 const pages = getEntry('./src/pages/**/*.html');
 console.log(`${emoji.get('triangular_flag_on_post')} 入口文件:\n`.green, entries);
 console.log(`${emoji.get('triangular_flag_on_post')} 多页面:\n`.green, pages);
@@ -23,7 +23,7 @@ const webpackConfig = {
     rules: [...rules],
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: [ '.tsx', '.ts', '.js' ],
     alias: {
       '@': pathResolve('../src'),
     },
